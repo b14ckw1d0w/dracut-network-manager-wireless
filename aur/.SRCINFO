@@ -1,11 +1,16 @@
 pkgbase = dracut-network-manager-wireless
-	pkgdesc = Install custom Dracut configuration and module for NetworkManager Wireless support
-	pkgver = 1.0.0
+	pkgdesc = A custom dracut module for initializing Wi-Fi connections during the early boot process.
+	pkgver = 1.0
 	pkgrel = 1
+	url = https://github.com/bl4ckw1d0w/dracut-network-manager-wireless
 	arch = any
-	license = GPL
-	url = https://github.com/b14ckw1d0w/dracut-network-manager-wireless/blob/main/aur
-	source = network-manager-wireless-dracut-1.0.0.tar.gz::https://github.com/b14ckw1d0w/dracut-network-manager-wireless/blob/main/aur/network-manager-wireless-dracut-1.0.0.tar.gz
-	sha256sums = SKIP
+	license = Apache
+	depends = dracut
+	depends = networkmanager
+	depends = wpa_supplicant
+	depends = clevis
+	depends = luks
+	source = dracut-network-manager-wireless-v1.0.zip::https://raw.githubusercontent.com/bl4ckw1d0w/dracut-network-manager-wireless/main/main/dracut-network-manager-wireless-v1.0.zip
+	sha256sums = a1deb32a61ce4344505985b57a316400d74975846efdcbbcef0c601abd064ca3
 
-pkgname = network-manager-wireless-dracut
+pkgname = dracut-network-manager-wireless
