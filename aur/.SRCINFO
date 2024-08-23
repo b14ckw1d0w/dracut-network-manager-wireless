@@ -4,6 +4,7 @@ pkgbase = dracut-network-manager-wireless
 	pkgrel = 1
 	url = https://github.com/bl4ckw1d0w/dracut-network-manager-wireless
 	arch = any
+<<<<<<< HEAD
 	license = Apache
 	depends = dracut
 	depends = networkmanager
@@ -12,5 +13,11 @@ pkgbase = dracut-network-manager-wireless
 	depends = luks
 	source = dracut-network-manager-wireless-v1.0.zip::https://raw.githubusercontent.com/bl4ckw1d0w/dracut-network-manager-wireless/main/main/dracut-network-manager-wireless-v1.0.zip
 	sha256sums = a1deb32a61ce4344505985b57a316400d74975846efdcbbcef0c601abd064ca3
+=======
+	license = GPL
+	url = https://github.com/b14ckw1d0w/dracut-network-manager-wireless/tree/94f1de687b05bb007cfebe26355a3e58b824d1ed/aur
+	source = network-manager-wireless-dracut-1.0.0.tar.gz::https://github.com/b14ckw1d0w/dracut-network-manager-wireless/blob/main/aur/network-manager-wireless-dracut-1.0.0.tar.gz
+	sha256sums = SKIP
+>>>>>>> e10199eb9af34227f619fb50ed1e33ac69d8b7e6
 
 pkgname = dracut-network-manager-wireless
