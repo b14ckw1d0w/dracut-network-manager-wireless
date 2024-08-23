@@ -4,16 +4,18 @@
 
 This project provides a custom dracut module for initializing Wi-Fi connections with wpa_supplicant and NetworkManager during the early boot process, particularly within an initramfs environment.
 
-**IMPORTANT:** Before using this module, ensure that Clevis, LUKS, and dracut are properly set up and functioning on your system.
+**IMPORTANT:** Before using this module, please ensure that Clevis, LUKS, and Dracut are properly set up and functioning on your system.
 
 ## Requirements
+
+Before you attempt this module, you must have your system fully functional with Dracut, LUKS, Clevis, and Network Manager, along with your Wi-Fi card drivers working. The following dependencies must also be met.
 
 - Clevis
 - LUKS
 - Dracut
 - NetworkManager
 - wpa_supplicant
-- Intel iwlwifi driver or Atheros ath9k WiFi Card, or add your own drivers to the initram.
+- Intel iwlwifi driver or Atheros ath9k WiFi Card, or add your drivers to the initram. More will be added in future versions.
 
 ## Installation
 
