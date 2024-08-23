@@ -1,4 +1,4 @@
-# Maintainer: Your Name <your.email@example.com>
+# Maintainer: bl4ckw1d0w bl4ckw1d0w.github@gmail.com
 pkgname=dracut-network-manager-wireless
 pkgver=1.0.0
 pkgrel=1
@@ -7,9 +7,8 @@ arch=('any')
 url="https://github.com/bl4ckw1d0w/dracut-network-manager-wireless"
 license=('Apache')
 depends=('dracut' 'networkmanager' 'wpa_supplicant' 'clevis')
-source=("dracut-network-manager-wireless-v$pkgver.tar.gz::https://github.com/b14ckw1d0w/dracut-network-manager-wireless/blob/25898b21ee460d8153fe733f52a27623d43de152/aur/dracut-network-manager-wireless-v$pkgver.tar.gz")
-sha256sums=('sha256sums=('2a4515eb6ac1770677567fbbe4939bbd1434b56a9436e037ebf39795dc3a7b87')
-')
+source=("dracut-network-manager-wireless-v$pkgver.tar.gz::https://raw.githubusercontent.com/b14ckw1d0w/dracut-network-manager-wireless/main/main/dracut-network-manager-wireless-v$pkgver.tar.gz")
+sha256sums=('e529ef35230a647c351dc186b8e697144010c3f8adf7c4f741b481dc9071451e')
 
 package() {
     # Extract and install the files to the package directory
@@ -19,4 +18,3 @@ package() {
     install -dm755 "$pkgdir/usr/lib/dracut/modules.d/30network-manager-wireless"
     install -m755 "$srcdir/usr/lib/dracut/modules.d/30network-manager-wireless/module-setup.sh" "$pkgdir/usr/lib/dracut/modules.d/30network-manager-wireless/"
 }
-
