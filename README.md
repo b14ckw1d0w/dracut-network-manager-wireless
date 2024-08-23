@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project provides a custom dracut module for initializing Wi-Fi connections with `wpa_supplicant` and `NetworkManager` during the early boot process, particularly within an initramfs environment.
+This project provides a custom Dracut module for initializing Wi-Fi connections with `wpa_supplicant` and `NetworkManager` during the early boot process, particularly within an initramfs environment.
 
 **IMPORTANT:** Before using this module, please ensure that Clevis, LUKS, and Dracut are properly set up and functioning on your system.
 
@@ -21,11 +21,7 @@ Before you attempt this module, you must have your system fully functional with 
 
 1. Run the following command to install:
     ```bash
-<<<<<<< HEAD
-    sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/b14ckw1d0w/dracut-network-manager-wireless/main/main/install.sh)"
-=======
     cd ~/ && curl -fsSL https://raw.githubusercontent.com/b14ckw1d0w/dracut-network-manager-wireless/main/main/install.sh -o install.sh && sudo bash install.sh
->>>>>>> c6d312d9627e3cd0b957610c3b31f0258a6b0e7b
     ```
 
 2. Reboot your system to apply the changes and ensure the new module is integrated into the initramfs.
