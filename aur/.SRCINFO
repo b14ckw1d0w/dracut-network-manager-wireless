@@ -1,0 +1,11 @@
+pkgbase = dracut-network-manager-wireless
+	pkgdesc = Install custom Dracut configuration and module for NetworkManager Wireless support
+	pkgver = 1.0.0
+	pkgrel = 1
+	arch = any
+	license = GPL
+	url = https://github.com/bl4ckw1d0w/dracut-network-manager-wireless/aur
+	source = network-manager-wireless-dracut-1.0.0.tar.gz::https://github.com/bl4ckw1d0w/dracutnetwork-manager-wireless/aur/dracut-network-manager-wireless-1.0.0.tar.gz
+	sha256sums = SKIP
+
+pkgname = network-manager-wireless-dracut

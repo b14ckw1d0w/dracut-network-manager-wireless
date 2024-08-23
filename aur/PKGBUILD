@@ -1,0 +1,23 @@
+# Maintainer: bl4ckw1d0w bl4ckw1d0w.github@gmail.com
+
+pkgname=dracut-network-manager-wireless
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Install custom Dracut configuration and module for NetworkManager Wireless support"
+arch=('any')
+url="https://github.com/bl4ckw1d0w/network-manager-wireless-dracut"
+license=('GPL')
+source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz")
+sha256sums=('SKIP')
+
+package() {
+    install -Dm644 "${srcdir}/${pkgname}-${pkgver}/etc/dracut.conf.d/network-manager-wireless.conf" \
+        "${pkgdir}/etc/dracut.conf.d/network-manager-wireless.conf"
+    install -Dm755 "${srcdir}/${pkgname}-${pkgver}/usr/lib/dracut/modules.d/30network-manager-wireless/module-setup.sh" \
+        "${pkgdir}/usr/lib/dracut/modules.d/30network-manager-wireless/module-setup.sh"
+}
+
+post_install() {
+    echo "Regenerating Dracut initramfs..."
+    dracut --force
+}
