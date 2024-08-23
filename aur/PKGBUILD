@@ -7,7 +7,7 @@ arch=('any')
 url="https://github.com/bl4ckw1d0w/dracut-network-manager-wireless"
 license=('Apache')
 depends=('dracut' 'networkmanager' 'wpa_supplicant' 'clevis')
-source=("dracut-network-manager-wireless-v$pkgver.zip::https://raw.githubusercontent.com/bl4ckw1d0w/dracut-network-manager-wireless/main/main/dracut-network-manager-wireless-v$pkgver.zip")
+source=("dracut-network-manager-wireless-v$pkgver.zip::https://github.com/b14ckw1d0w/dracut-network-manager-wireless/blob/25898b21ee460d8153fe733f52a27623d43de152/aur/dracut-network-manager-wireless-v$pkgver.tar.gz")
 sha256sums=('a1deb32a61ce4344505985b57a316400d74975846efdcbbcef0c601abd064ca3')
 
 package() {
