@@ -18,32 +18,13 @@
 # #      GitHub: www.github.com/bl4ckw1d0w/dracut-network-manager-wireless
 # #      E-mail: bl4ckw1d0w.github@gmail.com
 
-# Change to a temporary directory
-cd /tmp || exit
-
-echo "Installing Dracut Network Manager Initramfs Module..."
-
-# Download the zip file
-curl -LO https://github.com/bl4ckw1d0w/dracut-network-manager-wireless/releases/download/v1.0/dracut-network-manager-wireless-v1.0.zip
-
-# Unzip the downloaded file
-unzip dracut-network-manager-wireless-v1.0.zip
-
-# Determine the extracted directory name (assumes the directory name is the same as the zip file prefix)
-EXTRACTED_DIR="dracut-network-manager-wireless-v1.0"
-
-# Use rsync to copy files to the root directory
-sudo rsync -av --inplace \
-    --exclude='LICENCE' \
-    --exclude='README.md' \
-    --exclude='install.sh' \
-    --exclude='dracut-network-manager-wireless-v1.0.zip' \
-    "$EXTRACTED_DIR/" /
-
-# Remove the temporary files
-rm -rf "$EXTRACTED_DIR" dracut-network-manager-wireless-v1.0.zip
-
-# Regenerate the initramfs
-sudo dracut --force
-
-echo "Dracut Network Manager Initramfs Module installed successfully!"
+cd ~/ && mkdir dracut-network-manager-wireless-v1.0
+curl -fsSl "https://raw.githubusercontent.com/b14ckw1d0w/dracut-network-manager-wireless/main/main/dracut-network-manager-wireless-v1.0.zip" -o /tmp/dracut-network-manager-wireless-v1.0.zip
+unzip dracut-network-manager-wireless-v1.0.zip -d /tmp/dracut-network-manager-wireless-v1.0
+cd dracut-network-manager-wireless-v1.0
+rm -rf /etc/dracut.conf.d/dracut-network-manager-wireless /usr/lib/dracut/modules.d/30network-manager-wireless/
+rsync -av --inplace "./" /
+cd ..
+rm -rf ~/dracut-network-manager-wireless-v1.0.zip ~/dracut-network-manager-wireless-v1.0/
+dracut --force --no-hostonly --no-hostonly-cmdline
+dracut --force --uefi --no-hostonly --hostonly-cmdline
