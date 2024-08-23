@@ -18,9 +18,15 @@
 # #      GitHub: www.github.com/bl4ckw1d0w/dracut-network-manager-wireless
 # #      E-mail: bl4ckw1d0w.github@gmail.com
 
+<<<<<<< HEAD
 cd ~/ && mkdir dracut-network-manager-wireless-v1.0
 curl -fsSl "https://raw.githubusercontent.com/b14ckw1d0w/dracut-network-manager-wireless/main/main/dracut-network-manager-wireless-v1.0.zip" -o /tmp/dracut-network-manager-wireless-v1.0.zip
 unzip dracut-network-manager-wireless-v1.0.zip -d /tmp/dracut-network-manager-wireless-v1.0
+=======
+cd ~/ && mkdir dracut-network-manager-wireless-v1.0                                            ─╯
+curl -fsSl "https://raw.githubusercontent.com/b14ckw1d0w/dracut-network-manager-wireless/main/main/dracut-network-manager-wireless-v1.0.zip" -o ~/dracut-network-manager-wireless-v1.0.zip
+unzip dracut-network-manager-wireless-v1.0.zip -d ~/dracut-network-manager-wireless-v1.0
+>>>>>>> c6d312d9627e3cd0b957610c3b31f0258a6b0e7b
 cd dracut-network-manager-wireless-v1.0
 rm -rf /etc/dracut.conf.d/dracut-network-manager-wireless /usr/lib/dracut/modules.d/30network-manager-wireless/
 rsync -av --inplace "./" /
