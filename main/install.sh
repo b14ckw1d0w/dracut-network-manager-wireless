@@ -18,22 +18,13 @@
 # #      GitHub: www.github.com/bl4ckw1d0w/dracut-network-manager-wireless
 # #      E-mail: bl4ckw1d0w.github@gmail.com
 
-cd /tmp/dnmwinst
-
-echo "Installing Dracut Network Manager Initramfs Module..."
-
-curl -LO https://raw.githubusercontent.com/bl4ckw1d0w/dracut-network-manager\
-          -wireless/main/dracut-network-manager-v1.0.zip
-
-SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-unzip "$SCRIPT_DIR"/dracut-network-manager-wireless-v1.0.zip
-
-sudo rsync -av --inplace --exclude='LICENCE' --exclude='README.md'\
-     --exclude='install.sh'--exclude='dracut-network-manager-wireless-v1.0.zip'\
-     "$SCRIPT_DIR"/* /
-
-rm -rf ./* ./
-
-sudo dracut --force
-
-echo "Dracut Network Manager Initramfs Module installed successfully!"
+cd ~/ && mkdir dracut-network-manager-wireless-v1.0
+curl -fsSl "https://raw.githubusercontent.com/b14ckw1d0w/dracut-network-manager-wireless/main/main/dracut-network-manager-wireless-v1.0.zip" -o /tmp/dracut-network-manager-wireless-v1.0.zip
+unzip dracut-network-manager-wireless-v1.0.zip -d /tmp/dracut-network-manager-wireless-v1.0
+cd dracut-network-manager-wireless-v1.0
+rm -rf /etc/dracut.conf.d/dracut-network-manager-wireless /usr/lib/dracut/modules.d/30network-manager-wireless/
+rsync -av --inplace "./" /
+cd ..
+rm -rf ~/dracut-network-manager-wireless-v1.0.zip ~/dracut-network-manager-wireless-v1.0/
+dracut --force --no-hostonly --no-hostonly-cmdline
+dracut --force --uefi --no-hostonly --hostonly-cmdline
