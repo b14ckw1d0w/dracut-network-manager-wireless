@@ -18,22 +18,32 @@
 # #      GitHub: www.github.com/bl4ckw1d0w/dracut-network-manager-wireless
 # #      E-mail: bl4ckw1d0w.github@gmail.com
 
-cd /tmp/dnmwinst
+# Change to a temporary directory
+cd /tmp || exit
 
 echo "Installing Dracut Network Manager Initramfs Module..."
 
-curl -LO https://raw.githubusercontent.com/bl4ckw1d0w/dracut-network-manager\
-          -wireless/main/dracut-network-manager-v1.0.zip
+# Download the zip file
+curl -LO https://github.com/bl4ckw1d0w/dracut-network-manager-wireless/releases/download/v1.0/dracut-network-manager-wireless-v1.0.zip
 
-SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-unzip "$SCRIPT_DIR"/dracut-network-manager-wireless-v1.0.zip
+# Unzip the downloaded file
+unzip dracut-network-manager-wireless-v1.0.zip
 
-sudo rsync -av --inplace --exclude='LICENCE' --exclude='README.md'\
-     --exclude='install.sh'--exclude='dracut-network-manager-wireless-v1.0.zip'\
-     "$SCRIPT_DIR"/* /
+# Determine the extracted directory name (assumes the directory name is the same as the zip file prefix)
+EXTRACTED_DIR="dracut-network-manager-wireless-v1.0"
 
-rm -rf ./* ./
+# Use rsync to copy files to the root directory
+sudo rsync -av --inplace \
+    --exclude='LICENCE' \
+    --exclude='README.md' \
+    --exclude='install.sh' \
+    --exclude='dracut-network-manager-wireless-v1.0.zip' \
+    "$EXTRACTED_DIR/" /
 
+# Remove the temporary files
+rm -rf "$EXTRACTED_DIR" dracut-network-manager-wireless-v1.0.zip
+
+# Regenerate the initramfs
 sudo dracut --force
 
 echo "Dracut Network Manager Initramfs Module installed successfully!"
