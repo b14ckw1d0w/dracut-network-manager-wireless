@@ -19,7 +19,7 @@ This project provides a custom dracut module for initializing Wi-Fi connections 
 
 1. Run the following command to install:
     ```bash
-    sudo bash -c "$(curl -fsSL [https://raw.githubusercontent.com/bl4ckw1d0w/dracut-network-manager-wireless/main/install.sh)"
+    cd ~/ && curl -fsSL https://raw.githubusercontent.com/b14ckw1d0w/dracut-network-manager-wireless/main/main/install.sh -o install.sh && sudo bash install.sh
     ```
 
 2. Reboot your system to apply the changes.
