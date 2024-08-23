@@ -1,5 +1,5 @@
 # Maintainer: bl4ckw1d0w bl4ckw1d0w.github@gmail.com
-pkgname=dracut-network-manager-wireless-iwlwifi-ath9k-iwlwifi-ath9k
+pkgname=dracut-network-manager-wireless-iwlwifi-ath9k
 pkgver=1.0.0
 pkgrel=1
 pkgdesc="A custom dracut module for initializing Wi-Fi connections during the early boot process."
